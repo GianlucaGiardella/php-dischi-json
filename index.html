@@ -5,18 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PHP Dischi JSON</title>
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
     <script
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
       defer
     ></script>
     <script src="script.js" defer></script>
+
     <link rel="stylesheet" href="style.css" />
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
   </head>
+
   <body>
-    <div id="app">
+    <div id="app" v-cloak>
       <ul>
         <li v-for="(song, i) in arrSongs" :key="i">
+          <img :src="song.image" :alt="song.title" />
           <h2>{{ song.title }}</h2>
           <p>{{ song.author }}</p>
           <h3>{{ song.year }}</h3>
