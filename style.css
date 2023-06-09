@@ -11,6 +11,9 @@ html {
 
 body {
   min-height: 100vh;
+  display: grid;
+  align-items: end;
+  background-color: #06131f;
 }
 
 a {
@@ -20,6 +23,27 @@ a {
 
 ul {
   list-style-type: none;
+  padding: 1.5rem 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, minmax(0, 300px));
+  grid-auto-rows: minmax(350px, auto);
+  gap: 2rem;
+  color: white;
+  background-color: #1d2d3c;
+}
+
+li {
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  background-color: #112030;
+}
+
+li:hover {
+  cursor: pointer;
 }
 
 img,
@@ -28,4 +52,27 @@ svg,
 video {
   display: block;
   max-width: 100%;
+}
+
+img {
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid white;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+p {
+  font-size: 0.7;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+h4 {
+  font-weight: 600;
 }
