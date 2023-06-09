@@ -1,3 +1,4 @@
+/* Reset  */
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +6,7 @@
 }
 
 html {
-  font-family: "Quicksand", sans-serif;
-  scroll-behavior: smooth;
+  font-family: sans-serif;
 }
 
 body {
@@ -16,34 +16,13 @@ body {
   background-color: #06131f;
 }
 
+ul {
+  list-style-type: none;
+}
+
 a {
   color: inherit;
   text-decoration: inherit;
-}
-
-ul {
-  list-style-type: none;
-  padding: 1.5rem 0;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(3, minmax(0, 300px));
-  grid-auto-rows: minmax(350px, auto);
-  gap: 2rem;
-  color: white;
-  background-color: #1d2d3c;
-}
-
-li {
-  padding: 0.8rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.7rem;
-  background-color: #112030;
-}
-
-li:hover {
-  cursor: pointer;
 }
 
 img,
@@ -54,25 +33,89 @@ video {
   max-width: 100%;
 }
 
-img {
+/* Song list */
+
+.song-list {
+  padding: 1.5rem 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, minmax(0, 300px));
+  grid-auto-rows: minmax(350px, auto);
+  gap: 2rem;
+  background-color: #1d2d3c;
+}
+
+/* Song */
+
+.song {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  color: white;
+}
+
+.song-list > .song {
+  padding: 0.8rem 1.2rem;
+  background-color: #112030;
+}
+
+.song-list > .song:hover,
+.active > .exit:hover {
+  cursor: pointer;
+}
+
+.song > img {
   width: 80%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border: 1px solid white;
 }
 
-h2 {
-  font-size: 1.2rem;
-  font-weight: 900;
+h2,
+h4,
+p {
   text-align: center;
 }
 
-p {
-  font-size: 0.7;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+h2 {
+  font-size: 1.2rem;
+  font-weight: 900;
 }
 
 h4 {
   font-weight: 600;
+}
+
+p {
+  font-size: 0.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Active Song */
+
+.active {
+  position: fixed;
+  inset: 0.5rem;
+  display: grid;
+  place-items: center;
+  background-color: rgba(17, 32, 49, 0.9);
+}
+
+.active > .song > img {
+  max-width: 500px;
+  width: 400px;
+  aspect-ratio: 1 / 1;
+}
+
+.active > .exit {
+  height: 2rem;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: white;
+  border: 1px solid white;
 }

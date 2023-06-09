@@ -23,14 +23,28 @@
 
   <body>
     <div id="app" v-cloak>
-      <ul>
-        <li v-for="(song, i) in arrSongs" :key="i">
+      <ul class="song-list">
+        <li
+          v-for="(song, i) in arrSongs"
+          :key="i"
+          @click="showActiveSong(song)"
+          class="song"
+        >
           <img :src="song.image" :alt="song.title" />
           <h2>{{ song.title }}</h2>
           <p>{{ song.author }}</p>
           <h3>{{ song.year }}</h3>
         </li>
       </ul>
+      <div v-if="activeSong.title" class="active">
+        <div class="song">
+          <img :src="activeSong.image" :alt="activeSong.title" />
+          <h2>{{ activeSong.title }}</h2>
+          <p>{{ activeSong.author }}</p>
+          <h3>{{ activeSong.year }}</h3>
+        </div>
+        <div class="exit" @click="removeActiveSong()">&#10005;</div>
+      </div>
     </div>
   </body>
 </html>
