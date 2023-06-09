@@ -14,6 +14,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <ul>
+        <li v-for="(song, i) in arrSongs" :key="i">
+          <h2>{{ song.title }}</h2>
+          <p>{{ song.author }}</p>
+          <h3>{{ song.year }}</h3>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
