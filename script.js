@@ -8,7 +8,7 @@ const app = Vue.createApp({
   methods: {
     requestSongs() {
       axios
-        .get("http://localhost:8888/php-dischi-json/server.php")
+        .get("server.php")
         .then((response) => (this.arrSongs = response.data));
     },
     showActiveSong(song) {
